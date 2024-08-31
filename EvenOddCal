@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class EvenOddCal{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] numbers = new int[10];
+        
+        System.out.println("Enter 10 integer numbers:");
+        for (int i = 0; i < 10; i++) {
+            numbers[i] = scanner.nextInt();
+        }
+        int[] evens = new int[10];
+        int[] odds = new int[10];
+        int evenCount = 0;
+        int oddCount = 0;
+
+        for (int number : numbers) {
+            if (number % 2 == 0) {
+                evens[evenCount++] = number;}
+         else{
+                odds[oddCount++] = number;
+            }
+        }
+
+        System.out.printf("%-10s %-10s%n", "Even", "Odd");
+                int maxLength = Math.max(evenCount, oddCount);
+        
+        for (int i = 0; i < maxLength; i++) {
+            if (i < evenCount) {
+                System.out.printf("%-10d", evens[i]);
+            } else {
+                System.out.printf("%-10s", ""); 
+            }
+            if (i < oddCount) {
+                System.out.printf("%-10d", odds[i]);
+            } else {
+                System.out.printf("%-10s", ""); 
+            }
+            System.out.println();
+        }
+    }
+}
